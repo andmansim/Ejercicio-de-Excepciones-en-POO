@@ -1,6 +1,6 @@
 import re
 
-class Excepciones:
+'''class Excepciones:
     def __init__(self, usuario):
         self.usuario = usuario
         
@@ -8,20 +8,20 @@ class Excepciones:
         return self.usuario
     
     def set_usuario(self, usuario): #método set, nos servirá para modificar el sself.usuario
-        self.usuario = usuario
+        self.usuario = usuario'''
     
-def intento(self):
-    
-    if self.usuario == "vicente@eni.es":
+def intento():
+    usuario = input()
+    if usuario == "vicente@eni.es":
         print("¡Bienvenido Vicente!")
     else:
         print("Uauario incorrecto, introduce tu dirección de correo")
+        
 
 print("Hola Vicente, por favor introduce tu correo electrónico para acceder")
+intento()
+#e = Excepciones(usuario)
 
-usuario = input()
-e = Excepciones(usuario)
-e.intento
 
 #usuario = "t"
 #usuario = "t@t.es"
