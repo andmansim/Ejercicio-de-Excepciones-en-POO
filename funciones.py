@@ -14,15 +14,20 @@ def intento():
     usuario = input()
     validacion = re.search("@", usuario) #si no está nos devuelve None
     print(validacion)
-    if validacion != None:
-        if usuario == "vicente@eni.es":
-            print("¡Bienvenido Vicente!")
+    contador = 0
+    while contador < 4:
+        if validacion != None:
+            if usuario == "vicente@eni.es":
+                print("¡Bienvenido Vicente!")
+            else:
+                print("La dirección de correo tiene que tener la forma de xxx@xx.xx")
+                contador = contador + 1
+                intento()
         else:
-            print("La dirección de correo tiene que tener la forma de xxx@xx.xx")
+            print("Uauario incorrecto, introduce tu dirección de correo")
+            contador = contador + 1
             intento()
-    else:
-        print("Uauario incorrecto, introduce tu dirección de correo")
-        intento()
+    print("Por motivos de seguridad se le ha bloqueado")
 
 print("Hola Vicente, por favor introduce tu correo electrónico para acceder")
 intento()
