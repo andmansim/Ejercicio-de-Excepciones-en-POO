@@ -12,13 +12,14 @@ import re
     
 def intento():
     usuario = input()
-    validacion = re.search("@   .  ", usuario) #si no está nos devuelve None
+    validacion = re.search("@", usuario) #si no está nos devuelve None
     print(validacion)
     if validacion != None:
         if usuario == "vicente@eni.es":
             print("¡Bienvenido Vicente!")
         else:
             print("La dirección de correo tiene que tener la forma de xxx@xx.xx")
+            intento()
     else:
         print("Uauario incorrecto, introduce tu dirección de correo")
         intento()
