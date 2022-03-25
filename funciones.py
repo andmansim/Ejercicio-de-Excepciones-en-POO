@@ -12,7 +12,8 @@ import re
     
 def intento():
     usuario = input()
-    validacion = re.search(". * @. *", usuario) #si no está nos devuelve None
+    validacion = re.search("@   .  ", usuario) #si no está nos devuelve None
+    print(validacion)
     if validacion != None:
         if usuario == "vicente@eni.es":
             print("¡Bienvenido Vicente!")
