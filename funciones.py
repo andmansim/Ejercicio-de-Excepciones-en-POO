@@ -10,11 +10,11 @@ import re
     def set_usuario(self, usuario): #método set, nos servirá para modificar el sself.usuario
         self.usuario = usuario'''
     
-def intento():
+def intento(contador):
     usuario = input()
     validacion = re.search("@", usuario) #si no está nos devuelve None
     print(validacion)
-    contador = 0
+    
     while contador < 4:
         if validacion != None:
             if usuario == "vicente@eni.es":
@@ -29,8 +29,9 @@ def intento():
             intento()
     print("Por motivos de seguridad se le ha bloqueado")
 
+contador = 0
 print("Hola Vicente, por favor introduce tu correo electrónico para acceder")
-intento()
+intento(contador)
 #e = Excepciones(usuario)
 
 #usuario = "t"
