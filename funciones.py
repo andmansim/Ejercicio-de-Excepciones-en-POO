@@ -8,19 +8,27 @@ class AtaqueBloq(BaseException):
     pass
 
 
-
+def errores(usuario):
+    validacion = re.search("@", usuario) #si no está nos devuelve None
+    if validacion == None:
+        raise UsIncorrecto
+    elif  usuario != "vicente@eni.es":
+        raise DiFormato
+    elif contador < 1:
+        raise AtaqueBloq
+    
+    
 def intento(contador1):
     if contador1 > 0:
         try:
-            
             usuario = input()
-            validacion = re.search("@", usuario) #si no está nos devuelve None
-            if 
-            print(contador1)
-            print(validacion)
-        except:
+            errores(usuario)           
+        except UsIncorrecto:
+            contador1 = contador1 - 1
             print("Usuario incorrecto, introduce tu dirección de correo")
-    if contador1 == 1 and validacion == None:
+            intento(contador1)
+            
+'''  if contador1 == 1 and validacion == None:
         AtaqueBloq
         print("Por motivos de seguridad, su usuario se ha bloqueado")
         
@@ -43,7 +51,7 @@ def intento(contador1):
       
     
             
-
+'''
 contador = 3
 print("Hola Vicente, por favor introduce tu correo electrónico para acceder")
 intento(contador)
