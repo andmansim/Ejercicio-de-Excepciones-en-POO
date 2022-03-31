@@ -7,11 +7,19 @@ class DiFormato(BaseException):
 class AtaqueBloq(BaseException):
     pass
 
+
+
 def intento(contador1):
-    usuario = input()
-    validacion = re.search("@", usuario) #si no está nos devuelve None
-    print(contador1)
-    print(validacion)
+    if contador1 > 0:
+        try:
+            
+            usuario = input()
+            validacion = re.search("@", usuario) #si no está nos devuelve None
+            if 
+            print(contador1)
+            print(validacion)
+        except:
+            print("Usuario incorrecto, introduce tu dirección de correo")
     if contador1 == 1 and validacion == None:
         AtaqueBloq
         print("Por motivos de seguridad, su usuario se ha bloqueado")
