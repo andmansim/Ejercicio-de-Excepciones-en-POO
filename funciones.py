@@ -8,9 +8,11 @@ class AtaqueBloq(BaseException):
     pass
 
 
-def errores(usuario): # valida si el correo es correcto y recoge cada error
+def errores(usuario, contador1): # valida si el correo es correcto y recoge cada error
     validacion = re.search("@", usuario) #si no está nos devuelve None
-    if contador == 1:
+    if usuario == "vicente@eni.es":
+        print("Bienvenido, Vicente")
+    elif contador1 == 1:
         raise AtaqueBloq
     elif validacion == None:
         raise UsIncorrecto #nos manda al except con esta etiqueta
@@ -18,19 +20,20 @@ def errores(usuario): # valida si el correo es correcto y recoge cada error
         raise DiFormato
 
     
-def intento():
-    if contador > 0:
+def intento(contador1):
+    if contador1 > 0:
         try:
             usuario = input()
-            errores(usuario)           
+            errores(usuario, contador1)           
         except UsIncorrecto:
-            contador = contador - 1
+            contador1 = contador1 - 1
             print("Usuario incorrecto, introduce tu dirección de correo")
-            intento(contador)
+            intento(contador1)
         except DiFormato:  
-            contador = contador - 1
+            contador1 = contador1 - 1
             print("La dirección de correo tiene que tener la forma de xxx@xx.xx")
-            intento(contador) 
+            intento(contador1)
+ 
         except AtaqueBloq:
             print("Por motivos de seguridad, su usuario se ha bloqueado")
             
