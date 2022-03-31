@@ -15,7 +15,6 @@ def intento(contador):
     validacion = re.search("@", usuario) #si no está nos devuelve None
     #print(validacion)
     
-    
     if validacion != None:
         if usuario == "vicente@eni.es":
             print("¡Bienvenido Vicente!")
@@ -24,7 +23,7 @@ def intento(contador):
             print("La dirección de correo tiene que tener la forma de xxx@xx.xx")
             contador = contador + 1
             intento(contador)
-    else:
+    elif validacion == None:
         print("Uauario incorrecto, introduce tu dirección de correo")
         contador = contador + 1
         intento(contador)
