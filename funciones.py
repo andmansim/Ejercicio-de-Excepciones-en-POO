@@ -1,15 +1,15 @@
 import re
 
-class UsIncorecto:
+class UsIncorecto(BaseException):
     def __init__(self):
         print("Usuario incorrecto, introduce tu dirección de correo")
         self.contador = contador + 1
-        intento(contador)
+        intento(self.contador)
         
-    def get_contador(self): #método get, nos lo coge
+    '''def get_usuario(self): #método get, nos lo coge
         return self.contador
     
-    '''def set_usuario(self, usuario): #método set, nos servirá para modificar el sself.usuario
+    def set_usuario(self, usuario): #método set, nos servirá para modificar el sself.usuario
         self.usuario = usuario'''
     
 def intento(contador):
