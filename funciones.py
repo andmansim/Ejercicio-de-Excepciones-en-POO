@@ -1,13 +1,15 @@
 import re
 
-'''class Excepciones:
-    def __init__(self, usuario):
-        self.usuario = usuario
+class UsIncorecto:
+    def __init__(self):
+        print("Usuario incorrecto, introduce tu dirección de correo")
+        self.contador = contador + 1
+        intento(contador)
         
-    def get_usuario(self): #método get, nos lo coge
-        return self.usuario
+    def get_contador(self): #método get, nos lo coge
+        return self.contador
     
-    def set_usuario(self, usuario): #método set, nos servirá para modificar el sself.usuario
+    '''def set_usuario(self, usuario): #método set, nos servirá para modificar el sself.usuario
         self.usuario = usuario'''
     
 def intento(contador):
@@ -15,10 +17,10 @@ def intento(contador):
     validacion = re.search("@", usuario) #si no está nos devuelve None
     print(contador)
     
-    if contador >= 3:
+    if contador >= 3 and validacion == None:
         print("Por motivos de seguridad se le ha bloqueado")
         
-    if contador < 3:
+    if contador <=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          3:
         if validacion != None:
             if usuario == "vicente@eni.es":
                 print("¡Bienvenido Vicente!")
@@ -28,13 +30,12 @@ def intento(contador):
                 contador = contador + 1
                 intento(contador)
         elif validacion == None:
-            print("Uauario incorrecto, introduce tu dirección de correo")
+            raise UsIncorecto
+            print("Usuario incorrecto, introduce tu dirección de correo")
             contador = contador + 1
             intento(contador)
             
-    
-
 contador = 1
 print("Hola Vicente, por favor introduce tu correo electrónico para acceder")
 intento(contador)
-#e = Excepciones(usuario)
+#e = Excepciones(usuario)                                                                                                            
