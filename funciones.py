@@ -1,6 +1,6 @@
 import re
 
-class UsIncorrecto(BaseException):
+class UsIncorrecto(BaseException): #le indicamos que utilizamos esta clase 
     pass
 class DiFormato(BaseException):
     pass
@@ -8,10 +8,10 @@ class AtaqueBloq(BaseException):
     pass
 
 
-def errores(usuario):
+def errores(usuario): # valida si el correo es correcto y recoge cada error
     validacion = re.search("@", usuario) #si no está nos devuelve None
     if validacion == None:
-        raise UsIncorrecto
+        raise UsIncorrecto #nos manda al except con esta etiqueta
     elif  usuario != "vicente@eni.es":
         raise DiFormato
     elif contador < 1:
@@ -27,7 +27,10 @@ def intento(contador1):
             contador1 = contador1 - 1
             print("Usuario incorrecto, introduce tu dirección de correo")
             intento(contador1)
-            
+        except DiFormato:  
+            contador1 = contador1 - 1
+            print("La dirección de correo tiene que tener la forma de xxx@xx.xx")
+            intento(contador1)
 '''  if contador1 == 1 and validacion == None:
         AtaqueBloq
         print("Por motivos de seguridad, su usuario se ha bloqueado")
