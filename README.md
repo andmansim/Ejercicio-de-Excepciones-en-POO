@@ -14,7 +14,7 @@ if __name__ == "__main__":
     print("Hola Vicente, por favor introduce tu correo electrónico para acceder")
     funciones.intento(contador)
  
- import re
+ 
 
 class UsIncorrecto(BaseException): #le indicamos que utilizamos esta clase 
     pass
@@ -22,7 +22,9 @@ class DiFormato(BaseException):
     pass
 class AtaqueBloq(BaseException):
     pass
-
+    
+import re
+from clases import clases_excepciones
 
 def errores(usuario, contador1): # valida si el correo es correcto y recoge cada error
     validacion = re.search("@", usuario) #si no está nos devuelve None
