@@ -1,11 +1,12 @@
 import re
+from clases import clases_excepciones
 
-class UsIncorrecto(BaseException): #le indicamos que utilizamos esta clase 
+'''class UsIncorrecto(BaseException): #le indicamos que utilizamos esta clase 
     pass
 class DiFormato(BaseException):
     pass
 class AtaqueBloq(BaseException):
-    pass
+    pass'''
 
 
 def errores(usuario, contador1): # valida si el correo es correcto y recoge cada error
@@ -13,11 +14,11 @@ def errores(usuario, contador1): # valida si el correo es correcto y recoge cada
     if usuario == "vicente@eni.es":
         print("Bienvenido, Vicente")
     elif contador1 == 1:
-        raise AtaqueBloq
+        raise clases_excepciones.AtaqueBloq
     elif validacion == None:
-        raise UsIncorrecto #nos manda al except con esta etiqueta
+        raise clases_excepciones.UsIncorrecto #nos manda al except con esta etiqueta
     elif  usuario != "vicente@eni.es":
-        raise DiFormato
+        raise clases_excepciones.DiFormato
 
     
 def intento(contador1):
@@ -25,17 +26,15 @@ def intento(contador1):
         try:
             usuario = input()
             errores(usuario, contador1)           
-        except UsIncorrecto:
+        except clases_excepciones.UsIncorrecto:
             contador1 = contador1 - 1
             print("Usuario incorrecto, introduce tu dirección de correo")
             intento(contador1)
-        except DiFormato:  
+        except clases_excepciones.DiFormato:  
             contador1 = contador1 - 1
             print("La dirección de correo tiene que tener la forma de xxx@xx.xx")
             intento(contador1)
  
-        except AtaqueBloq:
+        except clases_excepciones.AtaqueBloq:
             print("Por motivos de seguridad, su usuario se ha bloqueado")
             
-
-
