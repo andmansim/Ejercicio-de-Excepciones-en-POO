@@ -1,14 +1,6 @@
 import re
 from clases import clases_excepciones
 
-'''class UsIncorrecto(BaseException): #le indicamos que utilizamos esta clase 
-    pass
-class DiFormato(BaseException):
-    pass
-class AtaqueBloq(BaseException):
-    pass'''
-
-
 def errores(usuario, contador1): # valida si el correo es correcto y recoge cada error
     validacion = re.search("@", usuario) #si no está nos devuelve None
     if usuario == "vicente@eni.es":
